@@ -15,7 +15,7 @@ function* rootSaga() {
 
 function* fetchGiphy(action) {
     try {
-        const response = yield axios.get('/api/search');
+        const response = yield axios.post('/api/search', action.payload);
         yield put({ type: 'SET_GIPHY', payload: response.data.data})
         console.log(response.data.data);
     } catch {
