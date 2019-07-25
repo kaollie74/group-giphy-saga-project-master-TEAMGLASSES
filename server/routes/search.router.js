@@ -11,7 +11,7 @@ const GIPHY_API_KEY = process.env.GIPHY_API_KEY;
 router.get('/', (req,res) => {
     console.log('hitting search pull router');
     
-    axios.get(`api.giphy.com/v1/gifs/search?api_key=${GIPHY_API_KEY}`)
+    axios.get(`api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=${GIPHY_API_KEY}`)
     .then ((response) => {
         console.log('back from giphy');
         res.send(response.data)
