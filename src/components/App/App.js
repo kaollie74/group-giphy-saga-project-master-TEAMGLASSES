@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import axios from 'axios';
+//import axios from 'axios';
 
 
 
@@ -15,13 +15,26 @@ class App extends Component {
   }
 
   render() {
+
+     
+      
     return (
       <div>
         <h1>Giphy Search!</h1>
+        
+        <div>
+         
+        {this.props.reduxStore.setGiphy.map((item,i)=> <p key={item.id}> <img src = {item.images.fixed_height.url} alt= "Ryan Gosling"/></p>)}
+        </div>
+        
       </div>
     );
   }
   
 }
 
-export default connect() (App);
+const mapsToPropsState = (reduxStore) => ({
+  reduxStore
+})
+
+export default connect(mapsToPropsState) (App);

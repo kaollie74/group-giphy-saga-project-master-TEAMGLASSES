@@ -16,8 +16,8 @@ function* rootSaga() {
 function* fetchGiphy(action) {
     try {
         const response = yield axios.get('/api/search');
-        yield put({ type: 'SET_GIPHY', payload: response.data})
-        console.log(response.data);
+        yield put({ type: 'SET_GIPHY', payload: response.data.data})
+        console.log(response.data.data);
     } catch {
         console.log('error on fetch');
         
@@ -29,9 +29,11 @@ function* fetchGiphy(action) {
 const sagaMiddleware = createSagaMiddleware();
 
 //reducer
-const setGiphy = (state = {}, action) => {
+const setGiphy = (state = [], action) => {
+    
+    
     if(action.type === 'SET_GIPHY') {
-        return action.payload;
+        return  action.payload;
     }
     return state;
 }
