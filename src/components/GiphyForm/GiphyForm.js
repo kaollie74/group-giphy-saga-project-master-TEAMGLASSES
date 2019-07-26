@@ -38,7 +38,7 @@ findGiphy = (event) => {
       
     return (
       <div>
-        <h1>Giphy Search!</h1>
+       
         
        <form onSubmit={this.findGiphy}>
          <input type="text" onChange={this.handleChange}/>

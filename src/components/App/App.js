@@ -25,7 +25,7 @@ class App extends Component {
         <Giphy/>
         <div>
          
-        {this.props.reduxStore.setGiphy.map((item,i)=> <p key={item.id}> <img src = {item.images.fixed_height.url} alt= "Ryan Gosling"/></p>)}
+        {this.props.reduxStore.setGiphy.map((item,i)=> <p key={item.id}> <img src = {item.images.fixed_height.url} alt= ""/></p>)}
         </div>
         
       </div>
